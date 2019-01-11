@@ -4,3 +4,4 @@ List of DOTFILES:
 
   - .zpreztorc
   - .zshrc
+  - .curlrc
