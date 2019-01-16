@@ -11,6 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+alias cdns='sudo killall -HUP mDNSResponder'
 alias pc='proxychains4 -f ~/.proxychains.conf'
 alias ss='ss-local -c ~/.ssconf.json'
 alias cat='bat'
