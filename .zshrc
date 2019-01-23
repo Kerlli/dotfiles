@@ -11,7 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-alias cdns='sudo killall -HUP mDNSResponder'
+alias localip='ipconfig getifaddr en0'
+alias cdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 alias pc='proxychains4 -f ~/.proxychains.conf'
 alias ss='ss-local -c ~/.ssconf.json'
 alias cat='bat'
@@ -42,7 +43,9 @@ POWERLEVEL9K_VCS_COMMIT_ICON=$' \uF321 '
 set -o emacs
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export PATH="/usr/local/opt/ruby/bin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/ruby/lib"
-# export CPPFLAGS="-I/usr/local/opt/ruby/include"
-# export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="/usr/local/opt/libpcap/bin:$PATH"
