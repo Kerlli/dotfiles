@@ -1,4 +1,4 @@
-#### This repo keeps DOTFILES here
+#### This repo keeps DOTFILES
 
 List of DOTFILES:
 

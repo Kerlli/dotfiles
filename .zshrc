@@ -11,41 +11,45 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# anaconda env set
+export PATH=$HOME/anaconda3/bin:$PATH
+
+# metasploit-framework env set
+export PATH=/opt/metasploit-framework/bin:$PATH
+
+# curl env set
+export PATH=/usr/local/opt/curl/bin:$PATH
+
+# llvm env set
+export PATH=/usr/local/opt/llvm/bin:$PATH
+
+# autojump env set
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# Set Your Alias
+
+# use lsd instead of ls
+alias ls='lsd'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+alias cleariconcache='sudo rm -rf /Library/Caches/com.apple.iconservices.store'
 alias localip='ipconfig getifaddr en0'
-alias cdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
-alias pc='proxychains4 -f ~/.proxychains.conf'
-alias ss='ss-local -c ~/.ssconf.json'
-alias cat='bat'
+alias flushdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 alias ip='ipconfig getifaddr en0'
-alias ls='colorls -1'
-alias la='colorls --all'
-alias ld='colorls --dirs'
-alias lf='colorls --files'
-alias ll='colorls --long'
-alias lr='colorls --report'
-alias lt='colorls --tree'
-alias sl='/usr/local/Cellar/sl/5.02/bin/sl'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(command_execution_time dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
-POWERLEVEL9K_BATTERY_ICON=$' \uF3CA '
-POWERLEVEL9K_BATTERY_STAGES=($' \uF244 ' $' \uF243 ' $' \uF242 ' $' \uF241 ' $' \uF240 ')
-POWERLEVEL9K_BATTERY_VERBOSE=false
-POWERLEVEL9K_VCS_GIT_ICON=$' \uF113 '
-POWERLEVEL9K_EXECUTION_TIME_ICON=$' \uF017 '
-POWERLEVEL9K_NETWORK_ICON=$' \uF0E8 '
-POWERLEVEL9K_HOME_ICON=$' \uF015 '
-POWERLEVEL9K_HOME_SUB_ICON=$' \uF115 '
-POWERLEVEL9K_FOLDER_ICON=$' \uF114 '
-POWERLEVEL9K_OK_ICON=$'\uF058 '
-POWERLEVEL9K_CARRIAGE_RETURN_ICON=$'\uF071 '
-POWERLEVEL9K_VCS_COMMIT_ICON=$' \uF321 '
+
+# use bat instead of cat
+alias cat='bat'
+
+# proxychains
+alias pc='proxychains4 -f ~/.proxychains.conf'
 
 set -o emacs
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
-export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-export PATH="/usr/local/opt/libpcap/bin:$PATH"
+# nvm env set
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
