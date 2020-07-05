@@ -12,6 +12,10 @@ fi
 
 # Customize to your needs...
 
+# colorls tab completion
+
+source $(dirname $(gem which colorls))/tab_complete.sh
+
 # anaconda env set
 export PATH=$HOME/anaconda3/bin:$PATH
 
@@ -29,14 +33,19 @@ export PATH=/usr/local/opt/llvm/bin:$PATH
 
 # Set Your Alias
 
-# use lsd instead of ls
-alias ls='lsd'
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
+# use colorls instead of ls
 
-alias cleariconcache='sudo rm -rf /Library/Caches/com.apple.iconservices.store'
+alias lc='colorls -lA --sd'
+alias lsf='colorls --sf'
+alias lgs='colorls --gs'
+alias lt='colorls --tree'
+alias lr='colorls --report'
+alias ll='colorls --long'
+alias lf='colorls --files'
+alias ld='colorls --dirs'
+alias la='colorls --all'
+
+
 alias localip='ipconfig getifaddr en0'
 alias flushdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 alias ip='ipconfig getifaddr en0'
@@ -46,6 +55,7 @@ alias cat='bat'
 
 # proxychains
 alias pc='proxychains4 -f ~/.proxychains.conf'
+alias pcpm='proxychains4 -f ~/.proxychains-proxyman.conf'
 
 set -o emacs
 
