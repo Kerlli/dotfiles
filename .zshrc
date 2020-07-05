@@ -45,7 +45,7 @@ alias lf='colorls --files'
 alias ld='colorls --dirs'
 alias la='colorls --all'
 
-
+alias cleariconcache='sudo rm -rf /Library/Caches/com.apple.iconservices.store'
 alias localip='ipconfig getifaddr en0'
 alias flushdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 alias ip='ipconfig getifaddr en0'
